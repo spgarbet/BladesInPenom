@@ -1,0 +1,68 @@
+\documentclass{book}
+
+\usepackage[top=1.9cm, bottom=1.2cm, outer=2.2cm, inner=0.9cm, heightrounded, marginparwidth=2cm, marginparsep=0.6cm,paperwidth=6in,paperheight=9in]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{marginnote}
+%\usepackage{ebgaramond}
+\usepackage{rotating}
+\usepackage{array}
+\usepackage{float}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{fontspec,lettrine,microtype,xcolor}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage[font=itshape,leftmargin=1em]{quoting}
+\setmainfont{EB Garamond}[
+  Contextuals=Alternate,
+  Ligatures=Rare,
+  ItalicFeatures={Ligatures=Contextual}]
+\newfontface\initbg{EB Garamond Initials Fill1}[
+  Color=DarkGoldenrod]
+\newfontface\initfg{EB Garamond Initials Fill2}[
+  Color=Maroon]
+\setcounter{DefaultLines}{3}
+\renewcommand{\DefaultLoversize}{-.15}
+\renewcommand{\DefaultLraise}{.23}
+
+\newcommand{\kw}[1] {\textsc{\textbf{#1}}}
+\newcolumntype{L}{>{\raggedright\arraybackslash}m{2.7cm}}
+
+% Quotation
+\newenvironment{qb}%
+{\setlength{\parindent}{0em}\begin{leftbar}\begin{quoting}}%
+{\end{quoting}\end{leftbar}}
+
+\newlist{item3}{itemize}{1}
+\setlist[item3]{
+  label=\textbullet,
+  before=\begin{multicols}{3},
+  after=\end{multicols}
+}
+
+\setitemize{parsep=0.25pt,partopsep=0.25pt}
+
+\begin{document}
+
+\include{frontmatter}
+
+\tableofcontents{}
+\listoftables{}
+
+\include{introduction}
+\include{rules}
+%\include{basics}
+%\include{details}
+%\include{campaigns}
+%\include{directing}
+%\include{operation_moebius}
+%\include{twin_isles}
+%\include{sons_of_anak}
+%\include{backmatter}
+
+\end{document}
