@@ -7,7 +7,6 @@
 %\usepackage{ebgaramond}
 \usepackage{rotating}
 \usepackage{array}
-\usepackage{float}
 \usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{enumitem}
@@ -15,9 +14,13 @@
 \usepackage{fontspec,lettrine,microtype,xcolor}
 \usepackage{framed}
 \usepackage{enumitem}
-\usepackage{float}
 \usepackage{wrapfig}
+\usepackage[tableposition=top]{caption}
+\usepackage{floatrow}
 \usepackage[font=itshape,leftmargin=1em]{quoting}
+
+\floatsetup[table]{capposition=top}
+
 \setmainfont{EB Garamond}[
   Contextuals=Alternate,
   Ligatures=Rare,
@@ -30,13 +33,26 @@
 \renewcommand{\DefaultLoversize}{-.15}
 \renewcommand{\DefaultLraise}{.23}
 
+% Keywords
 \newcommand{\kw}[1] {\textsc{\textbf{#1}}}
+
+% Column type L
 \newcolumntype{L}{>{\raggedright\arraybackslash}m{2.7cm}}
 
 % Quotation
 \newenvironment{qb}%
-{\setlength{\parindent}{0em}\begin{leftbar}\begin{quoting}}%
+{\setlength{\parindent}{0em}\setlength{\parskip}{0em}\begin{leftbar}\begin{quoting}}%
 {\end{quoting}\end{leftbar}}
+
+
+\captionsetup[table]{textfont=LARGE}
+\captionsetup[table]{textfont+=bf}
+\captionsetup[table]{labelformat=empty}
+
+\newcommand{\gbox}[2]{\setlength\fboxsep{1em}
+\colorbox{lightgray}{\begin{minipage}{0.9\linewidth}\begin{table}[H]
+{\raggedright #2}
+\caption{#1}\end{table}\end{minipage}}}
 
 \newlist{item3}{itemize}{1}
 \setlist[item3]{
@@ -56,6 +72,7 @@
 
 \include{introduction}
 \include{rules}
+%\include{setting}
 %\include{basics}
 %\include{details}
 %\include{campaigns}
